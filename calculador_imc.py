@@ -129,11 +129,16 @@ while True:
                 pass  # Criar Tarefa (1)
             
             elif sub_opc == 3:
-                pass  # Criar Tarefa (2)
-            
+                nomes_ordenados = (sorted(avaliados, key=lambda x: x[1]))
+                print("Lista dos avaliados, por ordem alfabética:")
+                for dados in nomes_ordenados:
+                    print(f"ID:{dados[0]} O IMC de {dados[1]} é {dados[2]} e está classificado como: {dados[3]}")
+                        
             elif sub_opc == 4:
-                pass  # Criar Tarefa (3)
-            
+                imc_ordenado = (sorted(avaliados, key=lambda x: x[2]))
+                for dados in imc_ordenado:
+                    print(f"ID:{dados[0]} O IMC de {dados[1]} é {dados[2]} e está classificado como: {dados[3]}")
+
             elif sub_opc == 5:
                 continue
     
