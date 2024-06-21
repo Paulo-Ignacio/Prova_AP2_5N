@@ -45,9 +45,14 @@ def menu_estatisticas():
         4 - Voltar ao Menu Principal""")
         
         opc = int(input("Escolha uma opção: "))
-        
+    #################################################### Media de IMC ###############################################        
         if opc == 1:
-            pass  # Criar Tarefa (4)
+            soma=0 
+            for dados in avaliados:
+                soma += dados[2]
+                media = soma / len (avaliados)
+            print(f"A media do IMC é: {media:.2f}")
+    #################################################### Media de IMC ###############################################
         elif opc == 2:
             pass  # Criar Tarefa (5)
         elif opc == 3:
