@@ -61,12 +61,32 @@ def menu_estatisticas():
                 menor_imc = min(avaliados, key=lambda x: x[2]) #armazenando o IMC menor
                 print(f"O maior IMC é {maior_imc[2]} de {maior_imc[1]}, avaliado como: {maior_imc[3]}")
                 print(f"O menor IMC é {menor_imc[2]} de {menor_imc[1]}, avaliado como: {menor_imc[3]}")
-        elif opc == 3:
-            pass  # Criar Tarefa (6)
+ 
+        elif opc == 3: # Início Tarefa (Grupo 6 - Edmo, André, Haslan)
+            if len(avaliados) == 0:
+                print("Nenhum avaliado registrado.")
+            else:
+                contagem_imc = {
+                    "Magreza Grave": 0,
+                    "Magreza Moderada": 0,
+                    "Magreza Leve": 0,
+                    "Peso Ideal": 0,
+                    "Sobrepeso": 0,
+                    "Obesidade Grau I": 0,
+                    "Obesidade Grau II": 0,
+                    "Obesidade Grau III": 0
+                }
+                
+                for dados in avaliados:
+                    classificacao = dados[3]
+                    contagem_imc[classificacao] += 1
+                
+                for classificacao, quantidade in contagem_imc.items():
+                    print(f"{classificacao}: {quantidade} avaliado(s)") # Imprissão da Quantidade de avaliados em cada Classificação
         elif opc == 4:
             break
         else:
-            print("Escolha uma opção válida!")
+            print("Escolha uma opção válida!") # Fim Tarefa (Grupo 6 - Edmo, André, Haslan)
 
 def classifica_imc(imc):
     if imc < 16:
